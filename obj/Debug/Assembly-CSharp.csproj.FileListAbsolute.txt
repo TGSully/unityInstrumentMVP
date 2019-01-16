@@ -1,0 +1,2 @@
+/Users/beard0/dev/Test2cube/obj/Debug/Assembly-CSharp.csprojAssemblyReference.cache
+/Users/beard0/dev/Test2cube/obj/Debug/Assembly-CSharp.csproj.CoreCompileInputs.cache
