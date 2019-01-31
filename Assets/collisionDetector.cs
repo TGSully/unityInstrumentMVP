@@ -3,8 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class collisionDetector : MonoBehaviour {
-    Color currentColor = Color.yellow;
-
+    //////Color currentColor = Color.yellow;
+    Color origColor;
+    Color currentColor;
     public AudioClip mySound;
     public float volume;
     AudioSource audio;
@@ -12,6 +13,8 @@ public class collisionDetector : MonoBehaviour {
     void Start()
     {
         audio = GetComponent<AudioSource>();
+        currentColor = gameObject.GetComponent<Renderer>().material.color;
+        origColor = currentColor;
     }
 
     // Update is called once per frame
@@ -46,12 +49,12 @@ public class collisionDetector : MonoBehaviour {
 
     private void toggleColor()
     {
-        if(currentColor == Color.yellow){
+        if(currentColor == origColor){
             gameObject.GetComponent<Renderer>().material.color = Color.green;
             currentColor = Color.green;
         }else {
-            gameObject.GetComponent<Renderer>().material.color = Color.yellow;
-            currentColor = Color.yellow;
+            gameObject.GetComponent<Renderer>().material.color = origColor;
+            currentColor = origColor;
         }
     }
 
