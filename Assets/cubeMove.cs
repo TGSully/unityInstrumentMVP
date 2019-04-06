@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using System.Net.Sockets;
 using System.Threading;
+using System.Text;
 using System;
 
 
@@ -52,10 +53,12 @@ public class cubeMove : MonoBehaviour
         // float fy = Math.Min(Math.Abs(lastPosition.y - position.y) / 7.0f + 0.15f, 1);
         // float y = lastPosition.y * (1 - fy) + position.y * fy;
         //float m = 0.5;
-        Vector3 translation = position - transform.position;
+        Vector3 translation = position - transform.localPosition;
+        //Vector3 translation = position - transform.position;
         //print(translation);
         //transform.Translate(translation.x * Time.deltaTime * m, translation.y * Time.deltaTime * m, translation.z * Time.deltaTime * m);
         transform.Translate(translation);
+
         //Vector3 p = new Vector3(x, y, r);
         //print(position);
 
@@ -71,7 +74,7 @@ public class cubeMove : MonoBehaviour
 
         try
         {
-            client = new TcpClient("127.0.0.1", 8000);
+            client = new TcpClient("192.168.43.221", 8000);
 
             stream = client.GetStream();
 
@@ -79,15 +82,19 @@ public class cubeMove : MonoBehaviour
             {
                 // if (stream == null) continue;
 
-                byte[] data = new byte[256];
+                byte[] data = new byte[1024];
                 int bytes = stream.Read(data, 0, data.Length);
-                const float scale = 30;
-                int x = (int)(sbyte)data[0];
-                int y = (int)(sbyte)data[1];
-                int z = (int)(sbyte)data[2];
-                //print(x + " " +  y + " " + z);
-                position = new Vector3(x/scale, y /scale, -1f * z /scale);
-                //print(position);
+                string serverMessage = Encoding.ASCII.GetString(data);
+                const float scale = 2;
+
+                if (bytes == 0) { continue; }
+
+                string[] coords = serverMessage.Split(' ');
+                float x = float.Parse(coords[0]) - 0.5f;
+                float y = float.Parse(coords[1]);
+                float z = float.Parse(coords[2]) - 0.5f;
+                position = new Vector3(x, z, y);
+
 
             }
         }

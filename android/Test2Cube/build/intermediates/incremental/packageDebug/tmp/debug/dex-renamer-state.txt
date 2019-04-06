@@ -1,0 +1,7 @@
+#Sun Mar 31 19:22:27 EDT 2019
+base.0=/Users/david/dev/Test2Cube/android/Test2Cube/build/intermediates/transforms/dexMerger/debug/0
+path.1=classes.dex
+renamed.1=classes2.dex
+path.0=classes.dex
+renamed.0=classes.dex
+base.1=/Users/david/dev/Test2Cube/android/Test2Cube/build/intermediates/transforms/dexMerger/debug/1

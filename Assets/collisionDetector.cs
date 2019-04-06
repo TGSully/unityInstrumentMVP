@@ -8,7 +8,7 @@ public class collisionDetector : MonoBehaviour {
     Color currentColor;
     public AudioClip mySound;
     public float volume;
-    AudioSource audio;
+    public AudioSource audio;
 
     void Start()
     {
@@ -29,11 +29,26 @@ public class collisionDetector : MonoBehaviour {
        // Shader cube = Shader.Find("cube");
       //  gameObject.GetComponent<Renderer>().material.color = Color.green;
         if(collision.gameObject.name != "Plane") {
-            toggleColor();
-            if (audio)
-            {
-                audio.PlayOneShot(mySound, volume);
-            }
+
+            PlaySound();
+        }
+    }
+    void OnMouseDown()
+    {
+        PlaySound();
+    }
+
+    void OnMouseUp()
+    {
+        toggleColor();
+    }
+
+    public void PlaySound()
+    {
+        toggleColor();
+        if (audio)
+        {
+            audio.PlayOneShot(mySound, volume);
         }
     }
     private void OnCollisionExit(Collision collision)
