@@ -9,7 +9,6 @@ using System;
 
 public class cubeMove : MonoBehaviour
 {
-
     private static Thread clientRecieveThread;
     static Vector3 position;
 
