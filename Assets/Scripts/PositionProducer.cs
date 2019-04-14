@@ -13,7 +13,7 @@ public class PositionProducer : MonoBehaviour
 
     void Start()
     {
-        StartClient();
+        //StartClient();
     }
 
     void Update()
@@ -29,32 +29,60 @@ public class PositionProducer : MonoBehaviour
         clientRecieveThread.Start();
     }
 
+    void onPosition(string serverMessage)
+    {
+        float x, y, z;
+        print(serverMessage);
+        if (OnNewPosition == null) { return; }
+        string[] coords = serverMessage.Split(' ');
+        x = float.Parse(coords[0]);
+        y = float.Parse(coords[1]);
+        z = float.Parse(coords[2]);
+        if (z < 0.01f) { return; }
+        var position = new Vector3(x, y, z);
+
+        OnNewPosition(position);
+
+    }
+
     static void GetMessages()
     {
         TcpClient client;
         NetworkStream stream;
+        float x, y, z;
+        //const float SCALE = 2;
+
 
         try
         {
-            //client = new TcpClient("192.168.43.221", 8000);
             client = new TcpClient("10.0.0.48", 8000);
+            //client = new TcpClient("10.0.0.48", 8000);
             stream = client.GetStream();
             while (true)
             {
 
                 byte[] data = new byte[1024];
                 int bytes = stream.Read(data, 0, data.Length);
+                stream.Flush();
                 string serverMessage = Encoding.ASCII.GetString(data);
-                const float SCALE = 2;
+                print(serverMessage);
                 if (bytes == 0) { continue; }
                 if (OnNewPosition == null) { continue; }
                 string[] coords = serverMessage.Split(' ');
-                float x = float.Parse(coords[0]) - 0.5f;
-                float y = float.Parse(coords[1]);
-                float z = float.Parse(coords[2]) - 0.5f;
-                var position = new Vector3(x, z, y);
-                position *= SCALE;
-                OnNewPosition(position);
+                //try
+                //{
+                    x = float.Parse(coords[0]);
+                    y = float.Parse(coords[1]);
+                    z = float.Parse(coords[2]);
+                    if (z < 0.01f) continue;
+                    var position = new Vector3(x, y, z);
+                    //position *= SCALE;
+                    OnNewPosition(position);
+                //}
+                //catch (Ec)
+                //{
+                //    print("Error parsing float");
+                //}
             }
         }
         catch (SocketException e)

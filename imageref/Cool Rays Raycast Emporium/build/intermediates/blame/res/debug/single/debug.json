@@ -1,0 +1,38 @@
+[
+    {
+        "merged": "/Users/david/dev/Test2Cube/imageref/Cool Rays Raycast Emporium/build/intermediates/res/merged/debug/drawable-xhdpi_app_banner.png.flat",
+        "source": "/Users/david/dev/Test2Cube/imageref/Cool Rays Raycast Emporium/src/main/res/drawable-xhdpi/app_banner.png"
+    },
+    {
+        "merged": "/Users/david/dev/Test2Cube/imageref/Cool Rays Raycast Emporium/build/intermediates/res/merged/debug/mipmap-ldpi_app_icon.png.flat",
+        "source": "/Users/david/dev/Test2Cube/imageref/Cool Rays Raycast Emporium/src/main/res/mipmap-ldpi/app_icon.png"
+    },
+    {
+        "merged": "/Users/david/dev/Test2Cube/imageref/Cool Rays Raycast Emporium/build/intermediates/res/merged/debug/mipmap-xhdpi_app_icon.png.flat",
+        "source": "/Users/david/dev/Test2Cube/imageref/Cool Rays Raycast Emporium/src/main/res/mipmap-xhdpi/app_icon.png"
+    },
+    {
+        "merged": "/Users/david/dev/Test2Cube/imageref/Cool Rays Raycast Emporium/build/intermediates/res/merged/debug/mipmap-mdpi_app_icon.png.flat",
+        "source": "/Users/david/dev/Test2Cube/imageref/Cool Rays Raycast Emporium/src/main/res/mipmap-mdpi/app_icon.png"
+    },
+    {
+        "merged": "/Users/david/dev/Test2Cube/imageref/Cool Rays Raycast Emporium/build/intermediates/res/merged/debug/layout___arcore_education.xml.flat",
+        "source": "/Users/david/.gradle/caches/transforms-1/files-1.1/arcore_client.aar/28b2d5a4e8a2ed46a657af4e88bfde92/res/layout/__arcore_education.xml"
+    },
+    {
+        "merged": "/Users/david/dev/Test2Cube/imageref/Cool Rays Raycast Emporium/build/intermediates/res/merged/debug/mipmap-xxhdpi_app_icon.png.flat",
+        "source": "/Users/david/dev/Test2Cube/imageref/Cool Rays Raycast Emporium/src/main/res/mipmap-xxhdpi/app_icon.png"
+    },
+    {
+        "merged": "/Users/david/dev/Test2Cube/imageref/Cool Rays Raycast Emporium/build/intermediates/res/merged/debug/mipmap-hdpi_app_icon.png.flat",
+        "source": "/Users/david/dev/Test2Cube/imageref/Cool Rays Raycast Emporium/src/main/res/mipmap-hdpi/app_icon.png"
+    },
+    {
+        "merged": "/Users/david/dev/Test2Cube/imageref/Cool Rays Raycast Emporium/build/intermediates/res/merged/debug/raw_keep.xml.flat",
+        "source": "/Users/david/.gradle/caches/transforms-1/files-1.1/arcore_client.aar/28b2d5a4e8a2ed46a657af4e88bfde92/res/raw/keep.xml"
+    },
+    {
+        "merged": "/Users/david/dev/Test2Cube/imageref/Cool Rays Raycast Emporium/build/intermediates/res/merged/debug/mipmap-xxxhdpi_app_icon.png.flat",
+        "source": "/Users/david/dev/Test2Cube/imageref/Cool Rays Raycast Emporium/src/main/res/mipmap-xxxhdpi/app_icon.png"
+    }
+]

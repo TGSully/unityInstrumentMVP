@@ -20,6 +20,6 @@ public class ImageVisualizer : MonoBehaviour
             return;
         }
 
-        transform.localScale = new Vector3(Image.ExtentX, Image.ExtentZ, Image.ExtentX);
+        transform.localScale = new Vector3(Image.ExtentZ, Image.ExtentZ, Image.ExtentZ);
     }
 }

@@ -25,27 +25,44 @@ public class collisionDetector : MonoBehaviour {
     // Update is called once per frame
     private void OnCollisionEnter(Collision collision)
     {
-       // print("CollisionNNN BITCH");
-       // Shader cube = Shader.Find("cube");
-      //  gameObject.GetComponent<Renderer>().material.color = Color.green;
-        if(collision.gameObject.name != "Plane") {
-
+        print("Collision enter");
+        // print("CollisionNNN BITCH");
+        // Shader cube = Shader.Find("cube");
+        //  gameObject.GetComponent<Renderer>().material.color = Color.green;
+        if (collision.gameObject.name != "Plane") {
+            toggleColor();
             PlaySound();
         }
     }
+
+    //private void OnMouseExit()
+    //{
+    //    print("Mouse exit");
+    //    toggleColor();
+    //    PlaySound();
+    //}
+
+    //private void OnMouseEnter()
+    //{
+    //    print("Mouse enter");
+    //    toggleColor();
+    //}
+
     void OnMouseDown()
     {
+        print("Mouse down");
+        toggleColor();
         PlaySound();
     }
 
     void OnMouseUp()
     {
+        print("Mouse up");
         toggleColor();
     }
 
     public void PlaySound()
     {
-        toggleColor();
         if (audio)
         {
             audio.PlayOneShot(mySound, volume);
@@ -53,6 +70,7 @@ public class collisionDetector : MonoBehaviour {
     }
     private void OnCollisionExit(Collision collision)
     {
+        print("Collision exit");
         // print("CollisionNNN BITCH");
         // Shader cube = Shader.Find("cube");
         //  gameObject.GetComponent<Renderer>().material.color = Color.green;
